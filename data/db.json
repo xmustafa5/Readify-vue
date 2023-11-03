@@ -1,0 +1,9 @@
+{
+    "books":{
+        "id": 1,
+        "title":"hello",
+        "description":"mustafa",
+        "type": "crime",
+        "isFav": true
+    }
+}

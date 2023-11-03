@@ -1,6 +1,12 @@
 <template>
-    <h1>home</h1>
+    <div v-for="b in books" :key="b.id">
+        
+    </div>
 </template>
+
+<script  setup>
+ 
+</script>
 
 <style>
 *{
@@ -10,4 +16,5 @@
     scroll-behavior: smooth;
     background: #F5DEAF;
 }
-</style>
+</style>\
+

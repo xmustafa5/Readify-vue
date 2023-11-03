@@ -11,6 +11,7 @@
 </template>
 <script setup>
 const active = ref(false) 
+
 const navb = ref('navb1') 
 function handleScroll(){
     const wind = Math.round(window.scrollY)
@@ -48,7 +49,7 @@ function handleScroll(){
         navb.value = 'navb10'
     }
     
-    console.log(Math.round(window.scrollY))
+    // console.log(Math.round(window.scrollY))
 }
 if (process.client){
     window.addEventListener('scroll', handleScroll);
@@ -63,7 +64,7 @@ if (process.client){
     height: 100vh;
 }
 
-.navb0 {
+.navb {
     background: url(../assets/afterPS/2.png) no-repeat;
     background-size: cover;
     background-position: center;
