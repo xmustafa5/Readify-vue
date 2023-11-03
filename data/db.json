@@ -1,9 +1,80 @@
 {
-    "books":{
+  "books": [
+    {
         "id": 1,
-        "title":"hello",
-        "description":"mustafa",
+        "title": "crime",
+        "description": "mustafa",
         "type": "crime",
         "isFav": true
-    }
+      },
+      {
+          "id": 2,
+          "title": "crime",
+          "description": "mustafa",
+          "type": "crime",
+          "isFav": true
+        }
+        ,
+    {
+        "id": 3,
+        "title": "crime",
+        "description": "mustafa",
+        "type": "crime",
+        "isFav": true
+      }
+      ,
+    {
+        "id": 4,
+        "title": "crime",
+        "description": "mustafa",
+        "type": "crime",
+        "isFav": true
+      }
+      ,
+    {
+        "id": 5,
+        "title": "crime",
+        "description": "mustafa",
+        "type": "crime",
+        "isFav": true
+      },
+      {
+        "id": 1,
+        "title": "horror",
+        "description": "mustafa",
+        "type": "horror",
+        "isFav": true
+      },
+      {
+          "id": 2,
+          "title": "horror",
+          "description": "mustafa",
+          "type": "horror",
+          "isFav": true
+        }
+        ,
+    {
+        "id": 3,
+        "title": "horror",
+        "description": "mustafa",
+        "type": "horror",
+        "isFav": true
+      }
+      ,
+    {
+        "id": 4,
+        "title": "horror",
+        "description": "mustafa",
+        "type": "horror",
+        "isFav": true
+      }
+      ,
+    {
+        "id": 5,
+        "title": "horror",
+        "description": "mustafa",
+        "type": "horror",
+        "isFav": true
+      }
+  ]
 }
