@@ -1,6 +1,12 @@
 <template>
-    
-    <button @click="test('horror')">
+    <div>
+        
+        <h1 v-if="usee.loading">loading</h1>
+        <div v-for="item in usee.books" :key="item.id">
+            {{ item.title }}
+        </div>
+    </div>
+    <button @click="test('fantasy')">
         test data
     </button>
     {{ red }}f
@@ -12,6 +18,11 @@ const red = ref('')
         red.value = test
         
     }
+    const usee = useGet()
+  //   onMounted(() => {
+ //       usee.getTasks()
+ //});
+     usee.getdata()
 </script>
 
 <style>

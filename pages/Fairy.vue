@@ -8,12 +8,16 @@
     {{ dataStore }}
 </template>
   
-<script setup>
+<script  setup>
 import { useGet } from '@/stores/store';
 
 const dataStore = useGet();
 console.log(dataStore);
+//if you wont to use onmuounted to run data or play
 dataStore.getTasks()
+
+
+
 // onMounted(() => {
 //   dataStore.fetchData();
 // });

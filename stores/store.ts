@@ -1,51 +1,51 @@
- import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
- interface Book {
-   id: number;
-   title: string;
-   description: string;
-   type: string;
-   isFav: boolean;
- }
+// Define an interface for your store state
+interface Book {
+  id: number;
+  title: string;
+  description: string;
+  type: string;
+  isFav: boolean;
+}
 
- export const useGet = defineStore({
-   id: 'fetch',
-   state: () => ({
-     mustafa: 'mustafa' as string,
-     loading: false as boolean,
-     books: [] ,
-   }),
-   actions: {
-     async getTasks(){
-       const typedData = ref<Book[]>()
-         const {data:books} = await useFetch<Book>('http://localhost:3002/books')
-         this.books= books;
-      
- 
-   },
- }});
+export const useGet = defineStore({
+  id: "fetch",
+  state: () => ({
+    mustafa: "mustafa" as string,
+    loading: false as boolean,
+    books: [] as Book[],
+  }),
+  actions: {
+    async getTasks() {
+      try {
+        this.loading = true;
 
-// import { defineStore } from 'pinia';
-
-// export const useDataStore = defineStore('data', {
-//   state: () => ({
-//     data: [], // Initial data
-//   }),
-
-//   getters: {
-//     // Add any getters if needed
-//   },
-
-//   actions: {
-//     // Add actions to fetch and update the data
-//     async fetchData() {
-//       try {
-//         const response = await fetch('http://localhost:3002/books'); // Replace with your API endpoint
-//         const data = await response.json();
-//         this.data = data;
-//       } catch (error) {
-//         console.error('Error fetching data:', error);
-//       }
-//     },
-//   },
-// });
+        const { data: books } = await useFetch<Book>(
+          "http://localhost:3002/books"
+        );
+        this.books = books;
+      } catch (error) {
+        console.log("error");
+      } finally {
+        this.loading = false;
+      }
+    },
+    async getdata() {
+      try {
+        this.loading = true;
+        const response = await fetch("http://localhost:3002/books");
+        if (response.ok) {
+          const books = await response.json();
+          this.books = books;
+        } else {
+          console.error("Failed to fetch data");
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        this.loading = false;
+      }
+    },
+  },
+});

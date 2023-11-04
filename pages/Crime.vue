@@ -11,19 +11,12 @@
 </template>
 
 <script lang="ts" setup >
-interface Book {
-  id: number;
-  title: string;
-  description: string;
-  type: string;
-  isFav: boolean;
-}
+const {data: books} = await useFetch('http://localhost:3002/books')
+console.log(books);
+// const horror = computed(() => {
+//   return  books.value.filter(t => t.type === 'horror')
 
-
-const {data:books} = await useFetch<Book>('http://localhost:3002/books')
-     
-
-
+// })
 
 </script>
 
