@@ -1,11 +1,17 @@
 <template>
-    <div v-for="b in books" :key="b.id">
-        
-    </div>
+    
+    <button @click="test('horror')">
+        test data
+    </button>
+    {{ red }}f
 </template>
 
-<script  setup>
- 
+<script lang="ts" setup>
+const red = ref('')
+    const test = (test:string)=>{
+        red.value = test
+        
+    }
 </script>
 
 <style>
