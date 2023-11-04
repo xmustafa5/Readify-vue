@@ -1,23 +1,20 @@
 <template>
     <div>
-        <div v-for="book in fetch" :key="book.id">
-        {{  }}
-        </div>
-        {{ fetch.books }}
+        <h1>Data List</h1>
+        <ul>
+            <li v-for="item in dataStore.data" :key="item.id">{{ item.title }}</li>
+        </ul>
     </div>
 </template>
+  
+<script setup>
+import { useDataStore } from '@/stores/store';
 
-<script setup lang="ts">
-import { useGet } from "~/stores/store";
-const {data: res} = await useFetch('http://localhost:3001/books')
-console.log(res);
+const dataStore = useDataStore();
+console.log(dataStore);
 
-const fetch = useGet();
-
-console.log(fetch.books);
-
+onMounted(() => {
+  dataStore.fetchData();
+});
 </script>
-
-<style scoped>
-
-</style>
+  
