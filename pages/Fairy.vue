@@ -2,19 +2,20 @@
     <div>
         <h1>Data List</h1>
         <ul>
-            <li v-for="item in dataStore.data" :key="item.id">{{ item.title }}</li>
+            <li v-for="item in dataStore.books" :key="item.id">{{ item.title }}</li>
         </ul>
     </div>
+    {{ dataStore }}
 </template>
   
 <script setup>
-import { useDataStore } from '@/stores/store';
+import { useGet } from '@/stores/store';
 
-const dataStore = useDataStore();
+const dataStore = useGet();
 console.log(dataStore);
-
-onMounted(() => {
-  dataStore.fetchData();
-});
+dataStore.getTasks()
+// onMounted(() => {
+//   dataStore.fetchData();
+// });
 </script>
   
