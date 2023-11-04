@@ -8,7 +8,7 @@ interface Book {
     isFav: boolean;
   }
   
-  export const useFetch = defineStore({
+  export const useGet = defineStore({
     id: 'fetch',
     state: () => ({
       mustafa: "mustafa" as string,
@@ -18,8 +18,10 @@ interface Book {
     actions: {
       async getTasks() {
         this.loading = true;
-        const res = await fetch('http://localhost:3001/books');
+        const res = await fetch('http://localhost:3001/books')
         const data = await res.json();
+        console.log(data);
+        
         this.books = data;
         this.loading = false;
       },
