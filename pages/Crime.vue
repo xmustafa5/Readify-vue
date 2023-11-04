@@ -2,21 +2,20 @@
     <div>
         <h1>horror</h1>
         <div>
-            
-            <div v-for="b in books" :key="b.id">
+            <div v-for="b in horror" :key="b.id">
                 {{ b.title }}
             </div>
         </div>
     </div>
 </template>
 
-<script lang="ts" setup >
+<script setup >
 const {data: books} = await useFetch('http://localhost:3002/books')
 console.log(books);
-// const horror = computed(() => {
-//   return  books.value.filter(t => t.type === 'horror')
+const horror = computed(() => {
+  return  books.value.filter(t => t.type === 'horror')
 
-// })
+})
 
 </script>
 

@@ -12,10 +12,21 @@ interface Book {
 export const useGet = defineStore({
   id: "fetch",
   state: () => ({
-    mustafa: "mustafa" as string,
+    typeo: "s" as string,
     loading: false as boolean,
     books: [] as Book[],
+
   }),
+  getters:{
+    Filter(typeo: string) {
+      if (this.typeo === 's') {
+        return this.books
+      } else {
+        return this.books.filter((t) => t.type === this.typeo);
+      }
+    },
+  
+  },
   actions: {
     async getTasks() {
       try {
@@ -49,3 +60,5 @@ export const useGet = defineStore({
     },
   },
 });
+
+

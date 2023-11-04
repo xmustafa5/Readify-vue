@@ -1,23 +1,18 @@
 <template>
     <div>
-        
         <h1 v-if="usee.loading">loading</h1>
-        <div v-for="item in usee.books" :key="item.id">
+        <div v-for="item in usee.Filter" :key="item.id">
             {{ item.title }}
         </div>
     </div>
-    <button @click="test('fantasy')">
-        test data
-    </button>
-    {{ red }}f
+    <button @click="usee.$patch(usee.typeo = 'crime'
+    )">(patch)</button>
+  {{ usee.typeo }}
 </template>
 
 <script lang="ts" setup>
 const red = ref('')
-    const test = (test:string)=>{
-        red.value = test
-        
-    }
+  
     const usee = useGet()
   //   onMounted(() => {
  //       usee.getTasks()
