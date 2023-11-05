@@ -2,7 +2,7 @@
     <div>
         <h1>horror</h1>
         <div>
-            <div v-for="b in horror" :key="b.id">
+            <div v-for="b in books" :key="b.id">
                 {{ b.title }}
             </div>
         </div>

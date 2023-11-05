@@ -1,11 +1,15 @@
 <template>
     <div>
         <h1 v-if="usee.loading">loading</h1>
-        <div v-for="item in usee.Filter" :key="item.id">
+        <div v-for="item in usee.books" :key="item.id">
             {{ item.title }}
         </div>
     </div>
-    <button @click="usee.$patch(usee.typeo = 'crime'
+    <NuxtLink to="/fantasy" @click="usee.$patch(usee.typeo = 'crime'
+    )">Fantasy</NuxtLink>
+    <NuxtLink to="/horror" @click="usee.$patch(usee.typeo = 'horror'
+    )">horror</NuxtLink>
+    <button @click="usee.$patch(usee.typeo = 'horror'
     )">(patch)</button>
   {{ usee.typeo }}
 </template>
@@ -14,10 +18,10 @@
 const red = ref('')
   
     const usee = useGet()
-  //   onMounted(() => {
+ //    onMounted(() => {
  //       usee.getTasks()
  //});
-     usee.getdata()
+      usee.getdata()
 </script>
 
 <style>

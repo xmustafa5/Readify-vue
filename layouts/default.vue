@@ -2,7 +2,7 @@
 
         <div :class="navb" class="navb" >
            g<!-- <img src="../assets//afterPS//1.png" alt="ss"> -->   <div :class="{ active: isActive }"></div>
-
+        <NuxtLink to="/login">Login</NuxtLink>
         </div>
         <div class="te">
             <slot />

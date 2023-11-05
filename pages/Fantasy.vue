@@ -4,7 +4,7 @@
             <h1>Data List</h1>
             <div v-if="dataStore.loading">{{ dataStore.loading }}lloading ....</div>
             <ul>
-                <li v-for="item in dataStore.books" :key="item.id">{{ item.title }}</li>
+                <li v-for="item in dataStore.Filter" :key="item.id">{{ item.title }}</li>
             </ul>
         </div>
     </div>
@@ -16,11 +16,11 @@ import { useGet } from '@/stores/store';
 const dataStore = useGet();
 console.log(dataStore);
 
-dataStore.getdata()
+// dataStore.getdata()
 
-// onMounted(() => {
-//   dataStore.fetchData();
-// });
+ onMounted(() => {
+   dataStore.getdata();
+ });
 </script>
 
 <style scoped></style>

@@ -15,7 +15,8 @@ export const useGet = defineStore({
     typeo: "s" as string,
     loading: false as boolean,
     books: [] as Book[],
-
+    Token: '' as string,
+    Email: ''  as string,
   }),
   getters:{
     Filter(typeo: string) {
@@ -30,17 +31,16 @@ export const useGet = defineStore({
   actions: {
     async getTasks() {
       try {
-        this.loading = true;
+        
 
         const { data: books } = await useFetch<Book>(
           "http://localhost:3002/books"
         );
         this.books = books;
+        
       } catch (error) {
         console.log("error");
-      } finally {
-        this.loading = false;
-      }
+      } 
     },
     async getdata() {
       try {
@@ -49,6 +49,8 @@ export const useGet = defineStore({
         if (response.ok) {
           const books = await response.json();
           this.books = books;
+          
+
         } else {
           console.error("Failed to fetch data");
         }
